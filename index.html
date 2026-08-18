@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<title>কাজের খোঁজ — আজকের কাজ, আজই পান</title>
+<meta name="description" content="গ্রামের মানুষদের জন্য আজকের কাজের খোঁজ। রাজমিস্ত্রি, কৃষি শ্রমিক, রংমিস্ত্রি, ইলেকট্রিশিয়ান সহ নানা কাজের খবর, ফোন করেই যোগাযোগ করুন।" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<a class="skip-link" href="#main">মূল অংশে যান</a>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-icon" aria-hidden="true">🧰</span>
+      <span>কাজের খোঁজ</span>
+    </a>
+    <a class="header-call" href="tel:+8801821731006">
+      <span aria-hidden="true">📞</span> সাহায্য: 01821731006
+    </a>
+  </div>
+</header>
+
+<!-- ================= SECTION NAV ================= -->
+<nav class="section-nav" aria-label="সাইটের অংশ">
+  <div class="wrap section-nav-inner">
+    <a href="#listings"><span aria-hidden="true">🧰</span> কাজের তালিকা</a>
+    <a href="#workers"><span aria-hidden="true">👷</span> শ্রমিক প্রোফাইল</a>
+    <a href="#owners"><span aria-hidden="true">🧑‍💼</span> মালিক প্রোফাইল</a>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <div class="wrap hero-inner">
+      <h1>আজকের কাজ,<br/>আজই খুঁজে নিন</h1>
+      <p class="hero-sub">নিচে আপনার কাজের ধরন বেছে নিন — মালিকের নাম্বারে সরাসরি কল করুন।</p>
+
+      <!-- Category icon grid — primary navigation for low-literacy users -->
+      <div class="category-grid" id="category-grid" role="tablist" aria-label="কাজের ধরন">
+        <!-- populated by JS from data.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FILTER BAR ================= -->
+  <section class="filter-bar">
+    <div class="wrap filter-inner">
+      <label class="area-label" for="area-select">
+        <span aria-hidden="true">📍</span> এলাকা
+      </label>
+      <select id="area-select" class="area-select">
+        <option value="all">সব এলাকা</option>
+        <!-- populated by JS from data.js -->
+      </select>
+      <button class="clear-filter" id="clear-filter" type="button" hidden>সব কাজ দেখুন ✕</button>
+    </div>
+  </section>
+
+  <!-- ================= LISTINGS ================= -->
+  <section class="section" id="listings">
+    <div class="wrap">
+      <h2 id="listings-heading">আজকের কাজের তালিকা</h2>
+      <p class="listings-count" id="listings-count"></p>
+      <div class="job-grid" id="job-grid">
+        <!-- populated by JS from data.js -->
+      </div>
+      <p class="empty-state" id="empty-state" hidden>এই মুহূর্তে এই এলাকায়/ধরনে কোনো কাজ নেই। একটু পরে আবার দেখুন, অথবা সাহায্য নাম্বারে ফোন করুন।</p>
+    </div>
+  </section>
+
+  <!-- ================= WORKER PROFILES ================= -->
+  <section class="section alt" id="workers">
+    <div class="wrap">
+      <p class="eyebrow-dark">যারা কাজ খুঁজছেন</p>
+      <h2>শ্রমিক প্রোফাইল</h2>
+      <p class="section-sub">এই শ্রমিকরা কাজ খুঁজছেন — সরাসরি ফোন করে কথা বলুন।</p>
+      <div class="profile-grid" id="worker-grid">
+        <!-- populated by JS from data.js -->
+      </div>
+      <div class="profile-cta">
+        <p>আপনি কি কাজ খুঁজছেন? আপনার প্রোফাইলও এখানে দিতে পারেন — বিনামূল্যে।</p>
+        <a class="btn btn-whatsapp" id="whatsapp-worker-link" href="#" target="_blank" rel="noopener">
+          <span aria-hidden="true">💬</span> নিজের প্রোফাইল দিন
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= OWNER PROFILES ================= -->
+  <section class="section" id="owners">
+    <div class="wrap">
+      <p class="eyebrow-dark">নিয়মিত যারা লোক নেন</p>
+      <h2>মালিক / ঠিকাদার প্রোফাইল</h2>
+      <p class="section-sub">এই মালিক ও ঠিকাদাররা নিয়মিত শ্রমিক খোঁজেন — সরাসরি ফোন করে কথা বলুন।</p>
+      <div class="profile-grid" id="owner-grid">
+        <!-- populated by JS from data.js -->
+      </div>
+      <div class="profile-cta">
+        <p>আপনি কি নিয়মিত শ্রমিক নেন? আপনার প্রোফাইলও এখানে দিতে পারেন — বিনামূল্যে।</p>
+        <a class="btn btn-whatsapp" id="whatsapp-owner-link" href="#" target="_blank" rel="noopener">
+          <span aria-hidden="true">💬</span> নিজের প্রোফাইল দিন
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= POST A JOB (for employers) ================= -->
+  <section class="section post-job" id="post-job">
+    <div class="wrap post-job-inner">
+      <div class="post-job-text">
+        <p class="eyebrow">মালিক / ঠিকাদার</p>
+        <h2>আপনার কি লোক দরকার?</h2>
+        <p>আজই কাজের বিজ্ঞাপন দিন। একটা মেসেজ পাঠান — আমরা আপনার হয়ে কাজটি তালিকায় যোগ করে দেব, বিনামূল্যে।</p>
+        <ol class="post-steps">
+          <li>নিচের বাটনে চাপ দিন</li>
+          <li>কাজের নাম, এলাকা, মজুরি ও তারিখ লিখুন</li>
+          <li>আমরা কনফার্ম করে ওয়েবসাইটে দিয়ে দেব</li>
+        </ol>
+      </div>
+      <div class="post-job-actions">
+        <a class="btn btn-whatsapp" id="whatsapp-post-link" href="#" target="_blank" rel="noopener">
+          <span aria-hidden="true">💬</span> হোয়াটসঅ্যাপে কাজ দিন
+        </a>
+        <a class="btn btn-call" href="tel:+8801821731006">
+          <span aria-hidden="true">📞</span> ফোনে কাজ দিন
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="footer-brand">🧰 কাজের খোঁজ</p>
+    <p class="footer-line">এই তালিকা প্রতিদিন হালনাগাদ করা হয়। কাজ শুরুর আগে মজুরি ও শর্ত মুখে মুখে ঠিক করে নিন।</p>
+    <p class="footer-line">সাহায্য / অভিযোগ: <a href="tel:01821731006">০১৮-২১৭৩-১০০৬</a></p>
+  </div>
+</footer>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
